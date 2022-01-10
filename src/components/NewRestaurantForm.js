@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createRestaurant} from '../actions/restaurantActions';
 import { Container, Form, Button } from 'react-bootstrap';
 
-function NewRestaurantForm() {
 
+function NewRestaurantForm() {
     const initState = {
         name: "",
         country: "",
@@ -13,6 +15,8 @@ function NewRestaurantForm() {
 
     const [restaurant, setRestaurant] = useState(initState)
 
+    const dispatch = useDispatch()
+
     function handleChange(e){
         setRestaurant({
             ...restaurant, 
@@ -22,7 +26,12 @@ function NewRestaurantForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(restaurant)
+
+        if (restaurant.name && restaurant.country) {
+            dispatch(createRestaurant(restaurant))
+            setRestaurant(initState)
+        }
+        
     }
 
     return(

@@ -23,3 +23,18 @@ export const fetchRestaurants = () => {
      }     
 }
 
+export const createRestaurant = (restaurant) => {
+    return (dispatch) => {
+    const configObj = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body:JSON.stringify({restaurant})
+    }
+        fetch(baseUrl, configObj)
+          .then(resp => resp.json())
+          .then(restaurant => dispatch(addRestaurant(restaurant)))
+    }
+}
