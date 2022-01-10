@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: aktiv-grotesk, sans-serif;
 }
 
 .App-logo {
@@ -47,4 +48,21 @@
 
 .restaurant-form h3 {
   text-align: center;
+}
+
+.restaurant-card {
+  display: inline-block;
+  margin: 10px;
+  width:350px;
+  height: 350px;
+  color: #282c34;
+  border: 1px solid #5d6472;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+.restaurant-card img {
+  width: 350px;
+  height: 220px;
 }
