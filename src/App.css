@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+.restaurant-form {
+  background-color: rgb(240, 240, 210);
+  padding: 2rem;
+  margin: 2rem;
+  text-align: left;
+}
+
+.restaurant-form h3 {
+  text-align: center;
+}
