@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: aktiv-grotesk, sans-serif;
+  background-color: rgb(247, 243, 243);
 }
 
 .App-logo {
@@ -54,14 +55,13 @@
   background-repeat: repeat;
 }
 
-#homepage h1 {
+#homepage h3 {
   color: white;
   text-shadow: 2px 2px black;
 }
 
-#homepage h3 {
+#homepage p {
   color: white;
-  text-shadow: 2px 2px black;
 }
 
 .restaurant-form {
@@ -76,15 +76,16 @@
 }
 
 .restaurant-card {
+  background-color: white;
   display: inline-block;
   margin: 10px;
   width:350px;
   height: 300px;
   color: #282c34;
-  border: 1px solid #5d6472;
   text-decoration: none;
   text-align: center;
   font-size: 20px;
+  border-radius: 5px;
 }
 
 .restaurant-card:hover{
@@ -92,6 +93,7 @@
 }
 
 .restaurant-card img {
+  border-radius: 5px;
   width: 350px;
   height: 200px;
 }
@@ -118,3 +120,4 @@
 #restaurant-filter input {
   margin: 1rem;
 }
+

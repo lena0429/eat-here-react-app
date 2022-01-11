@@ -6,6 +6,8 @@ import RestautrantFilter from '../components/RestautrantFilter';
 import { fetchRestaurants  } from '../actions/restaurantActions';
 import { Container } from 'react-bootstrap';
 import RestaurantCard from '../components/RestaurantCard';
+import RestaurantPage from '../components/RestaurantPage';
+import { Switch, Route } from 'react-router-dom';
 
 
 

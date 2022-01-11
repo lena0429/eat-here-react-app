@@ -6,11 +6,11 @@ function RestaurantCard(props){
   const [ thumb, setThumb ] = useState("image")
 
   function handleEnter(e){
-    setThumb( prevState => "gif")
+      setThumb( prevState => "gif")
   }
-
+     
   function handleLeave(e){
-    setThumb(prevState => "image")
+      setThumb(prevState => "image")
   }
     
     return(

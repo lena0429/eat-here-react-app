@@ -40,22 +40,22 @@ function NewRestaurantForm() {
             <h3>Add a New Restaurant</h3>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Name: </Form.Label>
-                        <Form.Control size="sm" type="text" name="name" onChange={handleChange} />
+                        <Form.Control size="sm" type="text" name="name" value={restaurant.name} onChange={handleChange} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCountry">
                         <Form.Label>Country: </Form.Label>
-                        <Form.Control type="text" name="country" onChange={handleChange} />
+                        <Form.Control type="text" name="country" value={restaurant.country} onChange={handleChange} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicImage">
                         <Form.Label>Image URL: </Form.Label>
-                        <Form.Control type="text" name="image" onChange={handleChange} />
+                        <Form.Control type="text" name="image" value={restaurant.image} onChange={handleChange} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicGif">
                         <Form.Label>Gif URL: </Form.Label>
-                        <Form.Control type="text" name="gif" onChange={handleChange} />
+                        <Form.Control type="text" name="gif" value={restaurant.gif} onChange={handleChange} />
                     </Form.Group>       
 
                     <Button variant="success" type="submit">Submit</Button>
