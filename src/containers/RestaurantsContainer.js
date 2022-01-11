@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NewRestaurantForm from '../components/NewRestaurantForm';
 import Loading from '../components/Loading';
@@ -6,7 +6,7 @@ import RestautrantFilter from '../components/RestautrantFilter';
 import { fetchRestaurants  } from '../actions/restaurantActions';
 import { Container } from 'react-bootstrap';
 import RestaurantCard from '../components/RestaurantCard';
-import { propTypes } from 'react-bootstrap/esm/Image';
+
 
 
 function RestaurantsContainer() {
@@ -14,6 +14,19 @@ function RestaurantsContainer() {
     const loading = useSelector(state => state.loading)
     const dispatch = useDispatch()
 
+    const initState = ""
+    // set local state for filter function
+    const [search, setSearch ] = useState(initState)
+
+    function handleSearch(e) {
+        setSearch(e.target.value)
+    }
+
+
+    function makeResultCards(){
+        const result = restaurants.filter((restaurant) => restaurant.country.toLowerCase() === search.toLowerCase())
+        return result.map((restaurant, id) => <RestaurantCard key={id} restaurant={restaurant} />)
+    }
 
     useEffect(() => {
         console.log("mounting ")
@@ -31,7 +44,7 @@ function RestaurantsContainer() {
 
   return(
       <Container className="restaurants-container">
-          <RestautrantFilter />  
+          <RestautrantFilter search={search} handleSearch={(handleSearch)} makeResultCards={makeResultCards} handleClearClick={() => setSearch("")} />  
           { loading ? <Loading /> : makeRestaurantCards() }
       </Container>
   )

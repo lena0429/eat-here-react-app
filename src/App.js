@@ -1,11 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RestaurantsContainer from './containers/RestaurantsContainer';
+import Homepage from './components/Homepage';
 
 function App() {
   return (
     <div className="App">
-      <h3>MOST UNUSUAL RESTAURANTS AROUND THE WORLD</h3>
+      <Homepage />
       <RestaurantsContainer />
     </div>
   );

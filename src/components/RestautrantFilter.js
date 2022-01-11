@@ -1,11 +1,17 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 
-function RestautrantFilter(){
+function RestautrantFilter(props){
+
 
     return(
-        <Container id="filter">
-            <input type="text" placeholder="Enter a country's name" />
+        <Container id="restaurant-filter">
+            <input type="text" placeholder="Enter a country's name" onChange={props.handleSearch}/>
+            <Button variant="dark" type="submit" onClick={props.handleClearClick}>Clear</Button>
+            <div>
+            {props.makeResultCards()}
+            <hr />
+            </div>
         </Container>
     )
 

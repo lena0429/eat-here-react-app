@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import RestaurantsContainer from '../containers/RestaurantsContainer';
-import RestautrantFilter from './RestautrantFilter';
 
 function RestaurantCard(props){
 
