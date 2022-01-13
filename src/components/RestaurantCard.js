@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function RestaurantCard(props){
 
@@ -13,9 +13,10 @@ function RestaurantCard(props){
       setThumb(prevState => "image")
   }
     
-    return(
+    return(  
+      <Link to={`/restaurants/${props.restaurant.id}`}>
       <div  
-      id={`restaurant-card-${props.id}`}
+      id={`restaurant-card-${props.restaurant.id}`}
       className="restaurant-card">
         <img id={props.restaurant.id}
           src={props.restaurant[thumb]} onMouseEnter={handleEnter} onMouseLeave={handleLeave}
@@ -24,6 +25,7 @@ function RestaurantCard(props){
         <hr className="center-line" />
         <h5>{props.restaurant.country}</h5>
   </div>
+  </Link>
     )
 }
 

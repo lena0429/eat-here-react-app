@@ -4,7 +4,7 @@ import { createRestaurant} from '../actions/restaurantActions';
 import { Container, Form, Button } from 'react-bootstrap';
 
 
-function NewRestaurantForm() {
+function NewRestaurantForm(props) {
     const initState = {
         name: "",
         country: "",
@@ -31,6 +31,8 @@ function NewRestaurantForm() {
             dispatch(createRestaurant(restaurant))
             setRestaurant(initState)
         }
+
+        props.goBack()
         
     }
 
@@ -58,7 +60,7 @@ function NewRestaurantForm() {
                         <Form.Control type="text" name="gif" value={restaurant.gif} onChange={handleChange} />
                     </Form.Group>       
 
-                    <Button variant="success" type="submit">Submit</Button>
+                    <Button variant="dark" type="submit">Submit</Button>
             </Form>
 
         </Container>

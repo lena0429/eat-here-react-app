@@ -38,3 +38,11 @@ export const createRestaurant = (restaurant) => {
           .then(restaurant => dispatch(addRestaurant(restaurant)))
     }
 }
+
+
+export const updateRestaurant = (id, newObject) => {
+    return {
+        type: "UPDATE_RESTAURANT",
+        payload: newObject
+    }
+}

@@ -23,7 +23,18 @@ const restaurantsReducer = (state = initState, action) => {
                 restaurants: [...state.restaurants, ...action.payload],
                 loading: false
             }
-            
+
+        case "UPDATE_RESTAURANT":
+            return state.restaurants.map((restaurant) => {
+                if (restaurant.id === action.payload.id) {
+                  return {
+                    ...action.payload,
+                  };
+                } else {
+                  return restaurant;
+                }
+              });
+             
         default:
             return state    
     } 

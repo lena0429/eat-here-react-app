@@ -45,14 +45,8 @@
 
 #homepage {
   width: 100%;
-  height: 35vh;
+  height: 30vh;
   background-color: rgb(138, 7, 7);
-}
-
-.hero {
-  background-position: center; 
-  background-size:30%;
-  background-repeat: repeat;
 }
 
 #homepage h3 {
@@ -62,6 +56,7 @@
 
 #homepage p {
   color: white;
+  text-shadow: 1px 1px black;
 }
 
 .restaurant-form {
@@ -121,3 +116,40 @@
   margin: 1rem;
 }
 
+.main-video {
+  background: white;
+  height: 60vh;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 5rem;
+
+}
+
+.player-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.restaurant-body {
+  padding: 2rem;
+}
+
+.vl {
+  border-left: 2px solid rgb(138, 7, 7);
+  height: 100vh;
+}
+
+#restaurant-filter input {
+  width: 300px;
+  height: 40px;
+  padding: 0 20px;
+}

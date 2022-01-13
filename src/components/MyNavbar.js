@@ -8,7 +8,7 @@ function MyNavbar(){
     <Nav className="me-auto">
       <Nav.Link href="/">HOME</Nav.Link>
       <Nav.Link href="/restaurants">RESTAURANTS</Nav.Link>
-      <Nav.Link href="/restaurants/new">NEW</Nav.Link>
+      <Nav.Link href="/restaurants/new">ADD RESTAURANT</Nav.Link>
     </Nav>
     </Container>
   </Navbar>
