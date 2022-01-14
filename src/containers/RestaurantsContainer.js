@@ -11,8 +11,8 @@ import { Switch, Route } from 'react-router-dom';
 import { updateRestaurant  } from '../actions/restaurantActions';
 
 function RestaurantsContainer() {
-    const restaurants = useSelector(state => state.restaurants)
-    const loading = useSelector(state => state.loading)
+    const restaurants = useSelector(state => state.restaurants.restaurants)
+    const loading = useSelector(state => state.restaurants.loading)
     const dispatch = useDispatch()
 
     const baseUrl = "http://localhost:5000/restaurants"
@@ -33,10 +33,10 @@ function RestaurantsContainer() {
         } 
     }, [dispatch])
 
-    // componentDidUpdate => HOW TO USE THIS FUNCTION?
-    useEffect(() => {
-        console.log("restaurants updated")
-    }, [restaurants])
+    // componentDidUpdate + componentDidMount => check if the state.restaurants updated
+    // useEffect(() => {
+    //     console.log("restaurants updated")
+    // }, [restaurants])
 
     
     function handleSearch(e) {
@@ -44,6 +44,7 @@ function RestaurantsContainer() {
     }
 
     function displayRestaurantCards(){
+        debugger
         const displayAllCards = restaurants.map((restaurant) => <RestaurantCard key={restaurant.id} restaurant={restaurant} />)
         const result = restaurants.filter((restaurant) => restaurant.country.toLowerCase().includes(search.toLowerCase()))
         if (search.length === 0) {

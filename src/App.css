@@ -92,17 +92,17 @@
 .restaurant-card img {
   border-radius: 5px;
   width: 350px;
-  height: 200px;
+  height: 190px;
 }
 
 .restaurant-card h5 {
-  padding: 0.5rem;
+  padding: 0.2rem;
   font-size: 1rem;
   font-weight: bold;
 }
 
 .restaurant-card h6 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 

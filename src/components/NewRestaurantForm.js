@@ -10,6 +10,7 @@ function NewRestaurantForm(props) {
         country: "",
         image: "",
         gif: "", 
+        text: "",
         likes: 0
     }
 
@@ -58,7 +59,12 @@ function NewRestaurantForm(props) {
                     <Form.Group className="mb-3" controlId="formBasicGif">
                         <Form.Label>Gif URL: </Form.Label>
                         <Form.Control type="text" name="gif" value={restaurant.gif} onChange={handleChange} />
-                    </Form.Group>       
+                    </Form.Group>   
+
+                    <Form.Group className="mb-3" controlId="formBasicText">
+                        <Form.Label>Description: </Form.Label>
+                        <Form.Control type="text" name="text" value={restaurant.text} onChange={handleChange} />
+                    </Form.Group>     
 
                     <Button variant="danger" type="submit">Submit</Button>
             </Form>
