@@ -60,7 +60,7 @@ function NewRestaurantForm(props) {
                         <Form.Control type="text" name="gif" value={restaurant.gif} onChange={handleChange} />
                     </Form.Group>       
 
-                    <Button variant="dark" type="submit">Submit</Button>
+                    <Button variant="danger" type="submit">Submit</Button>
             </Form>
 
         </Container>

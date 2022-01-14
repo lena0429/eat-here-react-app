@@ -25,7 +25,7 @@ function RestaurantCard(props){
           <br />
         <h5>{props.restaurant.name} - {props.restaurant.country}</h5>
         <hr className="center-line" />
-        <h5 style={{color: "red"}}>{props.restaurant.likes} ❤️</h5>
+        <h6 style={{color: "red"}}>{props.restaurant.likes} ❤️</h6>
   </div>
   </Link>
   </>
