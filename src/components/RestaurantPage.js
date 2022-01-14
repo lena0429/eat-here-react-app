@@ -6,7 +6,7 @@ function RestaurantPage(props){
     return(
 <Container className="restaurant-page">
   <Row>
-    <Col sm={2}><Button variant="secondary" style={{float:"left", margin:"1rem"}} onClick={()=>props.goBack()}>Go Back</Button></Col>
+    <Col sm={2}><Button variant="secondary" style={{float:"right", margin:"1rem"}} onClick={()=>props.goBack()}>Go Back</Button></Col>
     <Col sm={8}>
       <div className="restaurant-body">
         <br /><br />
@@ -17,7 +17,7 @@ function RestaurantPage(props){
       <p style={{textAlign: "left"}}>{props.restaurant.text}</p>
        </div> 
     </Col>
-    <Col sm={2}><Button variant="light" style={{float:"right", margin:"1rem"}}  onClick={(e) => props.increaseLikes(props.restaurant.id)}>❤️</Button></Col>
+    <Col sm={2}><Button variant="light" style={{float:"left", margin:"1rem"}}  onClick={(e) => props.increaseLikes(props.restaurant.id)}>❤️</Button></Col>
   </Row>
 </Container>  
     )
