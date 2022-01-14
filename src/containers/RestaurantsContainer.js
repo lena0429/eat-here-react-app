@@ -38,6 +38,7 @@ function RestaurantsContainer() {
         console.log("restaurants updated")
     }, [restaurants])
 
+    
     function handleSearch(e) {
         setSearch(e.target.value)
     }

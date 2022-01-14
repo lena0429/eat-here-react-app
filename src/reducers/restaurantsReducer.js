@@ -25,11 +25,14 @@ const restaurantsReducer = (state = initState, action) => {
             }
 
         case "UPDATE_RESTAURANT":
-            const idx = action.payload.id
+            // const idx = action.payload.id <= !! this is WRONG
+            // note that idx/index refers to the position of an specific restaurant object in the restaurants array
+            // the id is just the identifier to the specific object
+            const idx = state.restaurants.findIndex((restaurant) => restaurant.id === action.payload.id)
             const restaurant = action.payload
                     return {
                         ...state,
-                        restuarants: [...state.restaurants.slice(0, idx), restaurant, ...state.restaurants.slice(idx + 1) ]
+                        restaurants: [...state.restaurants.slice(0, idx), restaurant, ...state.restaurants.slice(idx + 1) ]
                     }
 
         default:

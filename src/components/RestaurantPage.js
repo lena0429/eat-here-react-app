@@ -17,7 +17,12 @@ function RestaurantPage(props){
       <p style={{textAlign: "left"}}>{props.restaurant.text}</p>
        </div> 
     </Col>
-    <Col sm={2}><Button variant="light" style={{float:"left", margin:"1rem"}}  onClick={(e) => props.increaseLikes(props.restaurant.id)}>❤️</Button></Col>
+    <Col sm={2}>
+      <div style={{float:"left", margin:"1rem"}}>
+      <Button variant="light" onClick={(e) => props.increaseLikes(props.restaurant.id)}>❤️</Button>
+      <p style={{color: "red"}}>{props.restaurant.likes} likes</p>
+      </div>
+    </Col>
   </Row>
 </Container>  
     )

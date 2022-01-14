@@ -39,7 +39,6 @@ export const createRestaurant = (restaurant) => {
     }
 }
 
-
 export const updateRestaurant = (newObject) => {
     return {
         type: "UPDATE_RESTAURANT",
