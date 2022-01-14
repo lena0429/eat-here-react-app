@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function RestaurantCard(props){
-
   const [ thumb, setThumb ] = useState("image")
 
   function handleEnter(e){
@@ -13,19 +12,23 @@ function RestaurantCard(props){
       setThumb(prevState => "image")
   }
     
-    return(  
+    return(
+      <>
       <Link to={`/restaurants/${props.restaurant.id}`}>
-      <div  
+      <div
+      key={props.restaurant.id}  
       id={`restaurant-card-${props.restaurant.id}`}
       className="restaurant-card">
         <img id={props.restaurant.id}
           src={props.restaurant[thumb]} onMouseEnter={handleEnter} onMouseLeave={handleLeave}
           alt={props.restaurant.name} />
-        <h4>{props.restaurant.name}</h4>
+          <br />
+        <h5>{props.restaurant.name} - {props.restaurant.country}</h5>
         <hr className="center-line" />
-        <h5>{props.restaurant.country}</h5>
+        <h5 style={{color: "red"}}>{props.restaurant.likes} ❤️</h5>
   </div>
   </Link>
+  </>
     )
 }
 

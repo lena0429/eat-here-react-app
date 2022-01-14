@@ -8,18 +8,21 @@ import { Container } from 'react-bootstrap';
 import RestaurantCard from '../components/RestaurantCard';
 import RestaurantPage from '../components/RestaurantPage';
 import { Switch, Route } from 'react-router-dom';
-// import { updateRestaurant  } from '../actions/restaurantActions';
+import { updateRestaurant  } from '../actions/restaurantActions';
 
 function RestaurantsContainer() {
     const restaurants = useSelector(state => state.restaurants)
     const loading = useSelector(state => state.loading)
     const dispatch = useDispatch()
 
+    const baseUrl = "http://localhost:5000/restaurants"
+
     // set local state for filter function
     const initState = ""
     const [search, setSearch ] = useState(initState)
 
 
+    // componentDidMount <= fetch all the data from database
     useEffect(() => {
         console.log("mounting restaurants")
          dispatch(fetchRestaurants())
@@ -29,6 +32,11 @@ function RestaurantsContainer() {
             console.log("unmounting restaurants")
         } 
     }, [dispatch])
+
+    // componentDidUpdate => HOW TO USE THIS FUNCTION?
+    useEffect(() => {
+        console.log("restaurants updated")
+    }, [restaurants])
 
     function handleSearch(e) {
         setSearch(e.target.value)
@@ -45,7 +53,25 @@ function RestaurantsContainer() {
             return <p style={{color: "red"}}><b>No Result Found</b></p>
         } 
     }
+
+
+    function increaseLikes(id) {
+        const restaurant = restaurants.find((r) => r.id === id)
+        const configObj = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body:JSON.stringify({likes: restaurant.likes + 1})
+           }
+            fetch(`${baseUrl}/${id}`, configObj)
+            .then(resp => resp.json())
+            .then(data => dispatch(updateRestaurant(data)))
+
+    }
   
+
   return(
       <Container className="restaurants-container">
           <Switch>
@@ -66,7 +92,7 @@ function RestaurantsContainer() {
                       // console.log(routeInfo)
                       const paramsId = parseInt(routeInfo.match.params.id) 
                       const singleRestaurant = restaurants.find((restaurant) => restaurant.id === paramsId)
-                      return <RestaurantPage restaurant={singleRestaurant} goBack={() => routeInfo.history.push("/restaurants")} />
+                      return <RestaurantPage restaurant={singleRestaurant} goBack={() => routeInfo.history.push("/restaurants")} increaseLikes={increaseLikes}/>
                   }}>
   
               </Route> 

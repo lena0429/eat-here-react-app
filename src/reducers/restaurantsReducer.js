@@ -25,16 +25,13 @@ const restaurantsReducer = (state = initState, action) => {
             }
 
         case "UPDATE_RESTAURANT":
-            return state.restaurants.map((restaurant) => {
-                if (restaurant.id === action.payload.id) {
-                  return {
-                    ...action.payload,
-                  };
-                } else {
-                  return restaurant;
-                }
-              });
-             
+            const idx = action.payload.id
+            const restaurant = action.payload
+                    return {
+                        ...state,
+                        restuarants: [...state.restaurants.slice(0, idx), restaurant, ...state.restaurants.slice(idx + 1) ]
+                    }
+
         default:
             return state    
     } 

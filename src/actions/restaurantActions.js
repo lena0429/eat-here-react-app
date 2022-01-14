@@ -40,9 +40,10 @@ export const createRestaurant = (restaurant) => {
 }
 
 
-export const updateRestaurant = (id, newObject) => {
+export const updateRestaurant = (newObject) => {
     return {
         type: "UPDATE_RESTAURANT",
         payload: newObject
     }
 }
+
