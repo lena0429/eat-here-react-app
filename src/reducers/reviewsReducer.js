@@ -4,7 +4,6 @@ const initialState = {
 }
 
 const reviewsReducer = (state = initialState, action) => {
-
     switch(action.type){
         case "LOADING": 
         return {

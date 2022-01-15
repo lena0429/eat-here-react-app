@@ -1,44 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import NewRestaurantForm from '../components/NewRestaurantForm';
-import Loading from '../components/Loading';
-import RestautrantFilter from '../components/RestautrantFilter';
-import { fetchRestaurants  } from '../actions/restaurantActions';
+import React, { useState } from 'react';
+import NewRestaurantForm from './NewRestaurantForm';
+import RestautrantFilter from './RestautrantFilter';
 import { Container } from 'react-bootstrap';
-import RestaurantCard from '../components/RestaurantCard';
-import RestaurantPage from '../components/RestaurantPage';
+import RestaurantCard from './RestaurantCard';
+import RestaurantPage from './RestaurantPage';
 import { Switch, Route } from 'react-router-dom';
-import { updateRestaurant  } from '../actions/restaurantActions';
 
-function RestaurantsContainer() {
-    const restaurants = useSelector(state => state.restaurants.restaurants)
-    const loading = useSelector(state => state.restaurants.loading)
-    const dispatch = useDispatch()
-
-    const baseUrl = "http://localhost:5000/restaurants"
-
+function RestaurantsContainer({restaurants, increaseLikes}) {
     // set local state for filter function
     const initState = ""
     const [search, setSearch ] = useState(initState)
 
-
-    // componentDidMount <= fetch all the data from database
-     useEffect(() => {
-         console.log("mounting restaurants")
-          dispatch(fetchRestaurants())
- 
-         // cleanup function
-         return () => {
-             console.log("unmounting restaurants")
-         } 
-     }, [dispatch])
-
-    // componentDidUpdate + componentDidMount => check if the state.restaurants updated
-     useEffect(() => {
-         console.log("restaurants updated")
-     }, [restaurants])
-
-    
     function handleSearch(e) {
         setSearch(e.target.value)
     }
@@ -55,24 +27,6 @@ function RestaurantsContainer() {
         } 
     }
 
-
-    function increaseLikes(id) {
-        const restaurant = restaurants.find((r) => r.id === id)
-        const configObj = {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body:JSON.stringify({likes: restaurant.likes + 1})
-           }
-            fetch(`${baseUrl}/${id}`, configObj)
-            .then(resp => resp.json())
-            .then(data => dispatch(updateRestaurant(data)))
-
-    }
-  
-
   return(
       <Container className="restaurants-container">
           <Switch>
@@ -84,7 +38,7 @@ function RestaurantsContainer() {
               return (
                 <>
                 <RestautrantFilter search={search} handleSearch={(handleSearch)} handleClearClick={() => setSearch("")} />  
-                { loading ? <Loading /> : displayRestaurantCards() }
+                {displayRestaurantCards()}
                 </>
               )
           }} />    
