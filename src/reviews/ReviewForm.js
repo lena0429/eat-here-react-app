@@ -24,7 +24,7 @@ function ReviewForm({ restaurants }){
     }
 
     return(
-        <Container className="review-form">
+        <Container className="form">
             <Form onSubmit={handleReviewSubmit}>
             <h3>Add a New Review</h3>
                     <Form.Group className="mb-3" controlId="formBasicTitle">

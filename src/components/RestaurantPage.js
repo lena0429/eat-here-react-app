@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Col, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function RestaurantPage(props){
     return(
@@ -14,7 +15,7 @@ function RestaurantPage(props){
               <p><i>Updated at: {props.restaurant.updated_at}</i></p>
               <br />
               <img src={props.restaurant.image} alt={props.restaurant.name} /><br /><br />
-              <p style={{textAlign: "left"}}>{props.restaurant.text}</p>
+              <p style={{textAlign: "left"}}>{props.restaurant.description}</p>
                </div> 
             </Col>
             <Col sm={2}>
@@ -25,9 +26,23 @@ function RestaurantPage(props){
             </Col>
           </Row>
         </Container>
-        <div>review section
-          {props.restaurant.reviews.map(r => <li key={r.id}>{r.title}</li>)}
-        </div>
+        <hr />
+        <Container className="review-section">
+          <h3>{props.restaurant.reviews.length} Comments</h3>
+          <Link to="/reviews/new">
+          <Button style={{float: "right"}}>Add Review</Button>
+          </Link>
+          <br />
+          {props.restaurant.reviews.map(r => <div key={r.id}>
+            <div style={{backgroundColor: "white"}}>
+            <img src="https://res.cloudinary.com/teepublic/image/private/s--UymRXkch--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1570281377/production/designs/6215195_0.jpg" alt="anonymous user icon" width="80px" />
+            <p style={{display: "inline", padding: "10px"}}>{r.title}</p>
+            <br />
+            <span>{r.content}</span>
+              </div>
+            <br /><br />
+            </div>)}
+        </Container>
         </>    
     )
 }

@@ -59,7 +59,7 @@
   text-shadow: 1px 1px black;
 }
 
-.restaurant-form {
+.form {
   background-color: rgb(59, 58, 58);
   color: rgb(218, 216, 216);
   padding: 2rem;
@@ -67,7 +67,7 @@
   text-align: left;
 }
 
-.restaurant-form h3 {
+.form h3 {
   text-align: center;
 }
 
@@ -166,14 +166,13 @@
   text-align: left;
 }
 
-.review-form {
-  background-color: rgb(59, 58, 58);
-  color: rgb(218, 216, 216);
-  padding: 2rem;
-  margin: 2rem;
+.restaurant-page img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.review-section {
   text-align: left;
 }
 
-.review-form h3 {
-  text-align: center;
-}

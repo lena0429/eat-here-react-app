@@ -36,7 +36,7 @@ function NewRestaurantForm(props) {
     }
 
     return(
-        <Container className="restaurant-form">
+        <Container className="form">
             <Form onSubmit={handleSubmit}>
             <h3>Add a New Restaurant</h3>
                     <Form.Group className="mb-3" controlId="formBasicName">

@@ -1,6 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import RestaurantsContainer from './containers/RestaurantsContainer';
 import ReviewsContainer from './reviews/ReviewsContainer';
 import Homepage from './components/Homepage';
