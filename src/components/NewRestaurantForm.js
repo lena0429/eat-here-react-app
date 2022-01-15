@@ -10,7 +10,7 @@ function NewRestaurantForm(props) {
         country: "",
         image: "",
         gif: "", 
-        text: "",
+        description: "",
         likes: 0
     }
 
@@ -31,10 +31,8 @@ function NewRestaurantForm(props) {
         if (restaurant.name && restaurant.country) {
             dispatch(createRestaurant(restaurant))
             setRestaurant(initState)
-        }
-
+        } 
         props.goBack()
-        
     }
 
     return(
@@ -61,9 +59,9 @@ function NewRestaurantForm(props) {
                         <Form.Control type="text" name="gif" value={restaurant.gif} onChange={handleChange} />
                     </Form.Group>   
 
-                    <Form.Group className="mb-3" controlId="formBasicText">
+                    <Form.Group className="mb-3" controlId="formBasicDescription">
                         <Form.Label>Description: </Form.Label>
-                        <Form.Control type="text" name="text" value={restaurant.text} onChange={handleChange} />
+                        <Form.Control type="text" name="description" value={restaurant.description} onChange={handleChange} />
                     </Form.Group>     
 
                     <Button variant="danger" type="submit">Submit</Button>

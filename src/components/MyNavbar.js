@@ -9,6 +9,7 @@ function MyNavbar(){
       <Nav.Link href="/">HOME</Nav.Link>
       <Nav.Link href="/restaurants">RESTAURANTS</Nav.Link>
       <Nav.Link href="/restaurants/new">ADD RESTAURANT</Nav.Link>
+      <Nav.Link href="/reviews">REVIEWS</Nav.Link>
     </Nav>
     </Container>
   </Navbar>

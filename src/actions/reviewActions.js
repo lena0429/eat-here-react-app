@@ -22,3 +22,21 @@ export const fecthReviews = () => {
     }
 } 
 
+
+export const createReview = (review) => {
+    return (dispatch) => {
+    
+        const configObj = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({review})
+        }
+
+        fetch(baseUrl, configObj)
+          .then(resp => resp.json())
+          .then(data => dispatch(addReview(data)))
+    }
+}

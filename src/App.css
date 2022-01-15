@@ -154,3 +154,26 @@
   height: 40px;
   padding: 0 20px;
 }
+
+.reviews-container {
+  font-family: Cursive;
+}
+
+.review-page {
+  background-color: darkgrey;
+  margin: 1rem;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.review-form {
+  background-color: rgb(59, 58, 58);
+  color: rgb(218, 216, 216);
+  padding: 2rem;
+  margin: 2rem;
+  text-align: left;
+}
+
+.review-form h3 {
+  text-align: center;
+}

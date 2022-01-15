@@ -25,7 +25,9 @@ function RestaurantPage(props){
             </Col>
           </Row>
         </Container>
-        <div>review section</div>
+        <div>review section
+          {props.restaurant.reviews.map(r => <li key={r.id}>{r.title}</li>)}
+        </div>
         </>    
     )
 }

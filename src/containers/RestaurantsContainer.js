@@ -23,20 +23,20 @@ function RestaurantsContainer() {
 
 
     // componentDidMount <= fetch all the data from database
-    useEffect(() => {
-        console.log("mounting restaurants")
-         dispatch(fetchRestaurants())
-
-        // cleanup function
-        return () => {
-            console.log("unmounting restaurants")
-        } 
-    }, [dispatch])
+     useEffect(() => {
+         console.log("mounting restaurants")
+          dispatch(fetchRestaurants())
+ 
+         // cleanup function
+         return () => {
+             console.log("unmounting restaurants")
+         } 
+     }, [dispatch])
 
     // componentDidUpdate + componentDidMount => check if the state.restaurants updated
-    // useEffect(() => {
-    //     console.log("restaurants updated")
-    // }, [restaurants])
+     useEffect(() => {
+         console.log("restaurants updated")
+     }, [restaurants])
 
     
     function handleSearch(e) {
@@ -44,7 +44,6 @@ function RestaurantsContainer() {
     }
 
     function displayRestaurantCards(){
-        debugger
         const displayAllCards = restaurants.map((restaurant) => <RestaurantCard key={restaurant.id} restaurant={restaurant} />)
         const result = restaurants.filter((restaurant) => restaurant.country.toLowerCase().includes(search.toLowerCase()))
         if (search.length === 0) {
