@@ -1,8 +1,6 @@
 # Eating Here React App
 
-The Eating Here App is built with React Hooks + Redux. This web application is for food lovers to explore the most unusual restaurants around the world. Users can add new restaurants as well as comment and like any restaurant. The App also provides name search functionality. Enjoy😊!
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), mostly using React Hooks + Redux. This web application is for food lovers to explore the most unusual restaurants around the world. Users can add new restaurants as well as comment and like any restaurant. The App also provides name search functionality. Enjoy😊!
 
 Feel free to check out the backend API repo <a href="https://github.com/lena0128/eat-here-rails-api-backend">here</a>.
 
