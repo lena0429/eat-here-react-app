@@ -1,10 +1,14 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import Review from './Review'; 
 
-function ReviewsList(){
+function ReviewsList({reviews}){
+    const displayAllReviews = reviews.map((review) => <Review key={review.id} review={review} />)
+
     return(
-        <Container>
-            <h1>Reviews List</h1>
+        <Container id="reviews-list">
+            <h3 style={{fontWeight:"bold", marginTop: "10px"}}>ALL REVIEWS</h3>
+            {displayAllReviews}
         </Container>
     )
 

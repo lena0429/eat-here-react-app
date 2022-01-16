@@ -10,6 +10,7 @@ function NewRestaurantForm(props) {
         country: "",
         image: "",
         gif: "", 
+        website: "",
         description: "",
         likes: 0
     }
@@ -31,8 +32,8 @@ function NewRestaurantForm(props) {
         if (restaurant.name && restaurant.country) {
             dispatch(createRestaurant(restaurant))
             setRestaurant(initState)
-        } 
-        props.goBack()
+            props.goBack()
+        }
     }
 
     return(
@@ -40,12 +41,12 @@ function NewRestaurantForm(props) {
             <Form onSubmit={handleSubmit}>
             <h3>Add a New Restaurant</h3>
                     <Form.Group className="mb-3" controlId="formBasicName">
-                        <Form.Label>Name: </Form.Label>
+                        <Form.Label>Name (required): </Form.Label>
                         <Form.Control size="sm" type="text" name="name" value={restaurant.name} onChange={handleChange} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCountry">
-                        <Form.Label>Country: </Form.Label>
+                        <Form.Label>Country (required): </Form.Label>
                         <Form.Control type="text" name="country" value={restaurant.country} onChange={handleChange} />
                     </Form.Group>
 
@@ -58,6 +59,11 @@ function NewRestaurantForm(props) {
                         <Form.Label>Gif URL: </Form.Label>
                         <Form.Control type="text" name="gif" value={restaurant.gif} onChange={handleChange} />
                     </Form.Group>   
+
+                    <Form.Group className="mb-3" controlId="formBasicWebsite">
+                        <Form.Label>Website: </Form.Label>
+                        <Form.Control type="text" name="website" value={restaurant.website} onChange={handleChange} />
+                    </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicDescription">
                         <Form.Label>Description: </Form.Label>

@@ -3,38 +3,42 @@ import { Form, Container, Button } from 'react-bootstrap';
 import { createReview } from '../actions/reviewActions';
 import { useDispatch } from 'react-redux';
 
-function ReviewForm({ restaurants }){
+function ReviewForm({ restaurants, goBack }){
 
-    const [title, setTitle] = useState("")
-    const [content, setContent] = useState("")
+    const [nickname, setNickname] = useState("")
+    const [comment, setComment] = useState("")
     const [restaurantName, setRestaurantName] = useState("CuliAir Sky Dining")
     const dispatch = useDispatch()
 
     function handleReviewSubmit(e) {
         e.preventDefault()
-        const relatedRestaurant = restaurants.find(r => r.name === restaurantName)
+        const relatedRestaurant = restaurants.find(restaurant => restaurant.name === restaurantName)
         const restaurant_id = relatedRestaurant.id
 
-        debugger
-        dispatch(createReview({title, content, restaurant_id}))
+        if (comment) {
+        dispatch(createReview({nickname, comment, restaurant_id}))
 
-        setTitle("")
-        setContent("")
+        setNickname("")
+        setComment("")
         setRestaurantName("CuliAir Sky Dining")
+
+        goBack()
+
+        }
     }
 
     return(
         <Container className="form">
             <Form onSubmit={handleReviewSubmit}>
             <h3>Add a New Review</h3>
-                    <Form.Group className="mb-3" controlId="formBasicTitle">
-                        <Form.Label>Title: </Form.Label>
-                        <Form.Control size="sm" type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <Form.Group className="mb-3" controlId="formBasicNickname">
+                        <Form.Label>Nickname: </Form.Label>
+                        <Form.Control size="sm" type="text" name="nickname" value={nickname} onChange={(e) => setNickname(e.target.value)} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicContent">
-                        <Form.Label>Content: </Form.Label>
-                        <Form.Control type="text" name="content" value={content} onChange={(e) => setContent(e.target.value)} />
+                        <Form.Label>Comment (required): </Form.Label>
+                        <Form.Control type="text" name="comment" value={comment} onChange={(e) => setComment(e.target.value)} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicRestaurants">
