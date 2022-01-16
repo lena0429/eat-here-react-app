@@ -25,8 +25,9 @@ function RestaurantPage(props){
               <p><i>Last Updated {updatedTime}</i></p>
               <br />
               <img src={props.restaurant.image} alt={props.restaurant.name} /><br /><br />
-              <p style={{fontSize: "x-small", fontWeight:"bold"}}><Link to={props.restaurant.website}>WEBSITE</Link></p>
               <p style={{textAlign: "left"}}>{props.restaurant.description}</p>
+              <img src={props.restaurant.gif} alt="a gif of this restaurant" /><br /><br />
+              <p style={{textAlign: "left", fontWeight:"bold"}}>Address: {props.restaurant.address}</p>
                </div> 
             </Col>
             <Col sm={2}>

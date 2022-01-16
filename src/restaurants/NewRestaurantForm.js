@@ -10,7 +10,7 @@ function NewRestaurantForm(props) {
         country: "",
         image: "",
         gif: "", 
-        website: "",
+        address: "",
         description: "",
         likes: 0
     }
@@ -60,9 +60,9 @@ function NewRestaurantForm(props) {
                         <Form.Control type="text" name="gif" value={restaurant.gif} onChange={handleChange} />
                     </Form.Group>   
 
-                    <Form.Group className="mb-3" controlId="formBasicWebsite">
-                        <Form.Label>Website: </Form.Label>
-                        <Form.Control type="text" name="website" value={restaurant.website} onChange={handleChange} />
+                    <Form.Group className="mb-3" controlId="formBasicAddress">
+                        <Form.Label>Address: </Form.Label>
+                        <Form.Control type="text" name="address" value={restaurant.address} onChange={handleChange} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicDescription">
