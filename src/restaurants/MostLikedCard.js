@@ -24,7 +24,7 @@ function MostLikedCard(props) {
           alt={props.restaurant.name} />
           <br />
         <h5>{props.restaurant.name} - {props.restaurant.country}</h5>
-        <h6 style={{fontSize: '10px', color: "red"}}>{props.restaurant.likes}❤️</h6>
+        <h6 style={{fontSize: '15px', color: "red"}}>{props.restaurant.likes}❤️</h6>
   </div>
   </Link>
   </>

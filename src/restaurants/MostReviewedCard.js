@@ -24,7 +24,7 @@ function MostReviewedCard(props) {
           alt={props.restaurant.name} />
           <br />
         <h5>{props.restaurant.name} - {props.restaurant.country}</h5>
-        <h6 style={{fontSize: '10px'}}>{props.restaurant.reviews.length} Reviews</h6>
+        <h6 style={{fontSize: '15px'}}>{props.restaurant.reviews.length} Reviews</h6>
   </div>
   </Link>
   </>

@@ -119,8 +119,8 @@
   background-color: white;
   display: inline-block;
   margin: 0 0 0 15px;
-  width:250px;
-  height: 200px;
+  width:300px;
+  height: 250px;
   color: #282c34;
   text-decoration: none;
   text-align: center;
@@ -130,12 +130,12 @@
 
 .most-reviewed-card img {
   border-radius: 5px;
-  width: 250px;
-  height: 140px;
+  width: 300px;
+  height: 170px;
 }
 
 .most-reviewed-card h5 {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: bold;
   margin-top: 10px;
 }

@@ -23,6 +23,7 @@ function Homepage({restaurants}){
               <h5><b>Most Reviewed Restaurants</b></h5>
                {displayMostReviewed}
           </div>
+          <br />
           <hr />
           <div className="homepage-card-section-2">
               <h5><b>Most Liked Restaurants</b></h5>
