@@ -15,12 +15,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Bug reports and pull requests are welcome on GitHub at https://github.com/lena0128/eat-here-react-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 ### License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The project is available as open source under the terms of <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">the GNU General Public License v3.0</a>.
 
 
