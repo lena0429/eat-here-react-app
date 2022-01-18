@@ -2,8 +2,12 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import Review from './Review'; 
 
-function ReviewsList({reviews}){
-    const displayAllReviews = reviews.map((review) => <Review key={review.id} review={review} />)
+function ReviewsList({reviews, handleDeleteReview}){
+
+    // sort all reviews by descending order
+    const sortAllReviews = reviews.sort((firstItem, secondItem) => secondItem.id - firstItem.id)
+  
+    const displayAllReviews = sortAllReviews.map((review) => <Review key={review.id} review={review} handleDeleteReview={handleDeleteReview}/>)
 
     return(
         <Container id="reviews-list">

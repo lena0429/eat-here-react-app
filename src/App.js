@@ -8,7 +8,7 @@ import Homepage from './components/Homepage';
 import MyNavbar from './components/MyNavbar';
 import { Route } from 'react-router-dom';
 import { fetchRestaurants, updateRestaurant } from './actions/restaurantActions';
-import { fecthReviews } from './actions/reviewActions';
+import { fecthReviews, deleteReview } from './actions/reviewActions';
 import Loading from './components/Loading';
 
 function App() {
@@ -56,6 +56,25 @@ function App() {
         .then(data => dispatch(updateRestaurant(data)))
 }
 
+
+function handleDeleteReview(id) {
+  const baseUrl = "http://localhost:5000/reviews"
+  const configObj = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(id)
+  }
+  
+  fetch(`${baseUrl}/${id}`, configObj)
+    .then(resp => resp.json())
+    .then(data => alert(data.message))
+
+    dispatch(deleteReview(id))  
+}
+
   return (
     <div className="App"> 
       <MyNavbar />
@@ -64,11 +83,11 @@ function App() {
        </Route>  
          
          <Route path="/restaurants"> 
-            { restaurantsLoading ? <Loading /> : <RestaurantsContainer restaurants={restaurants} increaseLikes={increaseLikes}/> }
+            { restaurantsLoading ? <Loading /> : <RestaurantsContainer restaurants={restaurants} increaseLikes={increaseLikes} reviews={reviews} /> }
          </Route>
 
          <Route path="/reviews"> 
-            { reviewsLoading ? <Loading /> : <ReviewsContainer reviews={reviews} restaurants={restaurants}/> }
+            { reviewsLoading ? <Loading /> : <ReviewsContainer reviews={reviews} restaurants={restaurants} handleDeleteReview={handleDeleteReview}/> }
          </Route>
     </div>
   );

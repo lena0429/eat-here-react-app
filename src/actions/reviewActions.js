@@ -41,3 +41,9 @@ export const createReview = (review) => {
     }
 }
 
+export const deleteReview = (id) => {
+    return {
+        type: "DELETE_REVIEW",
+        payload: id
+    }
+}

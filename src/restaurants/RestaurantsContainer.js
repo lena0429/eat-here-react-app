@@ -6,7 +6,7 @@ import RestaurantCard from './RestaurantCard';
 import RestaurantPage from './RestaurantPage';
 import { Switch, Route } from 'react-router-dom';
 
-function RestaurantsContainer({restaurants, increaseLikes}) {
+function RestaurantsContainer({restaurants, increaseLikes, handleDeleteReview}) {
     // set local state for filter function
     const initState = ""
     const [search, setSearch ] = useState(initState)
@@ -47,7 +47,7 @@ function RestaurantsContainer({restaurants, increaseLikes}) {
                       // console.log(routeInfo)
                       const paramsId = parseInt(routeInfo.match.params.id) 
                       const singleRestaurant = restaurants.find((restaurant) => restaurant.id === paramsId)
-                      return <RestaurantPage restaurant={singleRestaurant} goBack={() => routeInfo.history.push("/restaurants")} increaseLikes={increaseLikes}/>
+                      return <RestaurantPage restaurant={singleRestaurant} goBack={() => routeInfo.history.push("/restaurants")} increaseLikes={increaseLikes} handleDeleteReview={handleDeleteReview}/>
                   }}>
   
               </Route> 
