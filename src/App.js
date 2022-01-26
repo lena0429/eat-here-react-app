@@ -78,7 +78,7 @@ function handleDeleteReview(id) {
   return (
     <div className="App"> 
       <MyNavbar />
-       <Route exact path="/">
+       <Route exact path="/home">
             <Homepage restaurants={restaurants} reviews={reviews}/>
        </Route>  
          
