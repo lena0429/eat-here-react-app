@@ -20,6 +20,7 @@ function Homepage({restaurants}){
              <p>🍽️ Explore the most unusual restautrants around the world 🍽️</p>
           </div>
           <div className="homepage-card-section">
+          <br /><br />
               <h5><b>Most Reviewed Restaurants</b></h5>
                {displayMostReviewed}
           </div>
