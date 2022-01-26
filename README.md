@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Feel free to check out the backend API repo <a href="https://github.com/lena0128/eat-here-rails-api-backend">here</a>.
 
+## Live Site
+Please feel free to visit the live site: https://relaxed-goldstine-8d48b2.netlify.app/
+
 ## Installation & Usage
 
 In the project directory, you can run:
