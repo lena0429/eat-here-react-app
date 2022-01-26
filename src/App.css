@@ -245,8 +245,9 @@
   margin: 10px;
 }
 
-.nav-font {
+.nav-link {
   color: white;
+  text-decoration: none;
   font-size: 11px;
   font-weight: 500;
   padding: 10px;
