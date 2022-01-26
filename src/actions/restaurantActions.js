@@ -1,5 +1,5 @@
 
-const baseUrl = "http://localhost:5000/restaurants"
+const baseUrl = "https://mysterious-lake-96985.herokuapp.com"
 
 export const addRestaurant = (restaurantObj) => {
     return {

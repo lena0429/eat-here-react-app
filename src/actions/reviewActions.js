@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:5000/reviews"
+const baseUrl = "https://mysterious-lake-96985.herokuapp.com/reviews"
 
 export const addReview = (reviewObj) => {
     return {
