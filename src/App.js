@@ -41,7 +41,7 @@ function App() {
 
    // implementing increasing likes functionality and update the specific restaurant object
    function increaseLikes(id) {
-    const baseUrl = "https://mysterious-lake-96985.herokuapp.com"
+    const baseUrl = "https://mysterious-lake-96985.herokuapp.com/restaurants"
     const restaurant = restaurants.find((r) => r.id === id)
     const configObj = {
         method: "PATCH",
