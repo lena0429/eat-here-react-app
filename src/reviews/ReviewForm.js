@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
 import { createReview } from '../actions/reviewActions';
 import { useDispatch } from 'react-redux';
-import { updateRestaurant } from '../actions/restaurantActions';
+// import { updateRestaurant } from '../actions/restaurantActions';
 
 function ReviewForm({ restaurants, goBack }){
 
