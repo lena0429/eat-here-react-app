@@ -9,7 +9,7 @@ function RestaurantPage(props){
 
   useEffect(() => {
     dispatch(updateRestaurantReviews(restaurant_id))
-  }, [restaurant])
+  }, [dispatch])
 
   const displayReviews = props.restaurant.reviews.map(review => <div key={review.id}>
     <div className="comment-box">
