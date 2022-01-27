@@ -18,13 +18,13 @@ function ReviewForm({ restaurants, goBack }){
 
         if (comment) {
         dispatch(createReview({nickname, comment, restaurant_id}))
-        dispatch(updateRestaurantReviews(restaurant_id))
 
         setNickname("")
         setComment("")
         setRestaurantName("CuliAir Sky Dining")
 
         goBack()
+        dispatch(updateRestaurantReviews(restaurant_id))
 
         }
     }
