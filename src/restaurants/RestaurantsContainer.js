@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NewRestaurantForm from './NewRestaurantForm';
 import RestautrantFilter from './RestautrantFilter';
 import { Container } from 'react-bootstrap';
@@ -14,6 +14,11 @@ function RestaurantsContainer({restaurants, increaseLikes, handleDeleteReview}) 
     function handleSearch(e) {
         setSearch(e.target.value)
     }
+
+    // componentDidUpdate
+    useEffect(() => {
+        console.log(restaurants)
+    }, [restaurants])
 
     function displayRestaurantCards(){
         const displayAllCards = restaurants.map((restaurant) => <RestaurantCard key={restaurant.id} restaurant={restaurant} />)
