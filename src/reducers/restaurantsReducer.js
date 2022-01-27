@@ -35,6 +35,14 @@ const restaurantsReducer = (state = initState, action) => {
                         restaurants: [...state.restaurants.slice(0, idx), restaurant, ...state.restaurants.slice(idx + 1) ]
                     }
 
+        case "UPDATE_RESTAURANT_REVIEWS":
+            const iDx = state.restaurants.findIndex((restaurant) => restaurant.id === action.payload.id)
+            const updatedRestaurant = action.payload
+            return {
+                ...state, 
+                restaurants: [...state.restaurants.slice(0, iDx), updatedRestaurant, ...state.restaurants.slice(iDx + 1) ]
+            }            
+
         default:
             return state    
     } 

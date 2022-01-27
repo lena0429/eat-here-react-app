@@ -1,5 +1,4 @@
-
-const baseUrl = "https://mysterious-lake-96985.herokuapp.com/restaurants"
+const baseUrl = "http://localhost:5000/restaurants"
 
 export const addRestaurant = (restaurantObj) => {
     return {
@@ -46,3 +45,15 @@ export const updateRestaurant = (newObject) => {
     }
 }
 
+export const updateRestaurantReviews = (id) => {
+    return (dispatch) => {
+        fetch(`${baseUrl}/${id}`)
+        .then(resp=>resp.json())
+        .then(data=> {
+            dispatch({
+                type: "UPDATE_RESTAURANT_REVIEWS",
+                payload: data
+            })
+        })
+    }
+}

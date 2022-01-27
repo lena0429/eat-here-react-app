@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
 import { createReview } from '../actions/reviewActions';
 import { useDispatch } from 'react-redux';
+import { updateRestaurantReviews } from '../actions/restaurantActions';
 
 function ReviewForm({ restaurants, goBack }){
 
@@ -17,6 +18,7 @@ function ReviewForm({ restaurants, goBack }){
 
         if (comment) {
         dispatch(createReview({nickname, comment, restaurant_id}))
+        dispatch(updateRestaurantReviews(restaurant_id))
 
         setNickname("")
         setComment("")
