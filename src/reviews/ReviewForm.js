@@ -18,27 +18,13 @@ function ReviewForm({ restaurants, goBack }){
 
         if (comment) {
         dispatch(createReview({nickname, comment, restaurant_id}))
-
-        const configObj = {
-            method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body:JSON.stringify({reviews: relatedRestaurant.reviews})
-        }
-
-        fetch(`https://mysterious-lake-96985.herokuapp.com/restaurants/${restaurant_id}`, configObj)
-        .then(resp=>resp.json())
-        .then(data=> dispatch(updateRestaurant(data)))
         
         setNickname("")
         setComment("")
         setRestaurantName("CuliAir Sky Dining")
-
+        }
         goBack()
 
-        }
     }
 
     return(
