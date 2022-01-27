@@ -45,21 +45,3 @@ export const updateRestaurant = (newObject) => {
     }
 }
 
-export const updateRestaurantReviews = (id, restaurant) => {
-    const configObj = {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body:JSON.stringify({reviews: restaurant.reviews})
-    }
-
-    return (dispatch) => {
-        dispatch({type: "LOADING"})
-        fetch(`${baseUrl}/${id}`, configObj)
-
-        .then(resp=>resp.json())
-        .then(data=> dispatch(updateRestaurant(data)))
-    }
-}

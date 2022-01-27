@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Container, Button } from 'react-bootstrap';
 import { createReview } from '../actions/reviewActions';
 import { useDispatch } from 'react-redux';
-import { updateRestaurantReviews } from '../actions/restaurantActions';
+import { updateRestaurant } from '../actions/restaurantActions';
 
 function ReviewForm({ restaurants, goBack }){
 
@@ -18,13 +18,26 @@ function ReviewForm({ restaurants, goBack }){
 
         if (comment) {
         dispatch(createReview({nickname, comment, restaurant_id}))
-        dispatch(updateRestaurantReviews(restaurant_id, relatedRestaurant))
 
+        const configObj = {
+            method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body:JSON.stringify({reviews: relatedRestaurant.reviews})
+        }
+
+        fetch(`https://mysterious-lake-96985.herokuapp.com/restaurants/${restaurant_id}`, configObj)
+        .then(resp=>resp.json())
+        .then(data=> dispatch(updateRestaurant(data)))
+        
         setNickname("")
         setComment("")
         setRestaurantName("CuliAir Sky Dining")
 
         goBack()
+
         }
     }
 
