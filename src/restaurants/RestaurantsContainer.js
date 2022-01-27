@@ -17,7 +17,7 @@ function RestaurantsContainer({restaurants, increaseLikes, handleDeleteReview}) 
 
     // componentDidUpdate
     useEffect(() => {
-        console.log(restaurants)
+        console.log("restaurants updated")
     }, [restaurants])
 
     function displayRestaurantCards(){
