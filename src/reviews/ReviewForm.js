@@ -24,8 +24,6 @@ function ReviewForm({ restaurants, goBack }){
         setRestaurantName("CuliAir Sky Dining")
 
         goBack()
-        dispatch(updateRestaurantReviews(restaurant_id))
-
         }
     }
 

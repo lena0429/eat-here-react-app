@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Col, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { updateRestaurantReviews } from '../actions/restaurantActions';
 
 function RestaurantPage(props){
-  // const updatedTime = props.restaurant.updatedAt.slice(0, 10)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(updateRestaurantReviews(restaurant_id))
+  }, [restaurant])
 
   const displayReviews = props.restaurant.reviews.map(review => <div key={review.id}>
     <div className="comment-box">
