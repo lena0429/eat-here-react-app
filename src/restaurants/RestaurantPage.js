@@ -1,15 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container, Col, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { updateRestaurantReviews } from '../actions/restaurantActions';
 
 function RestaurantPage(props){
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(updateRestaurantReviews(restaurant_id))
-  }, [dispatch])
 
   const displayReviews = props.restaurant.reviews.map(review => <div key={review.id}>
     <div className="comment-box">

@@ -18,6 +18,7 @@ function ReviewForm({ restaurants, goBack }){
 
         if (comment) {
         dispatch(createReview({nickname, comment, restaurant_id}))
+        dispatch(updateRestaurantReviews(restaurant_id))
 
         setNickname("")
         setComment("")
