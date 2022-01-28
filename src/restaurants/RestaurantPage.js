@@ -22,9 +22,9 @@ function RestaurantPage(props){
                 <br /><br />
               <h3>{props.restaurant.name}, {props.restaurant.country}</h3>
               <br />
-              <img src={props.restaurant.image} alt={props.restaurant.name} /><br /><br />
+              <img src={props.restaurant.image} alt={props.restaurant.name} className="responsive"/><br /><br />
               <p style={{textAlign: "left"}}>{props.restaurant.description}</p>
-              <img src={props.restaurant.gif} alt="a gif of this restaurant" /><br /><br />
+              <img src={props.restaurant.gif} alt="a gif of this restaurant" className="responsive"/><br /><br />
               <p style={{textAlign: "left", fontWeight:"bold"}}>Address: {props.restaurant.address}</p>
                </div> 
             </Col>

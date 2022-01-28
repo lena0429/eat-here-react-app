@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: aktiv-grotesk, sans-serif;
+  font-family: Helvetica, sans-serif;
   background-color: rgb(247, 243, 243);
 }
 
@@ -80,7 +80,7 @@
 }
 
 .restaurant-card {
-  font-family: Cursive;
+  font-family: Helvetica, sans-serif;
   background-color: white;
   display: inline-block;
   margin: 10px;
@@ -115,7 +115,7 @@
 }
 
 .most-reviewed-card {
-  font-family: Cursive;
+  font-family: Helvetica, sans-serif;
   background-color: white;
   display: inline-block;
   margin: 0 0 0 15px;
@@ -179,7 +179,7 @@
 }
 
 .restaurant-page {
-  font-family: Cursive;
+  font-family: Helvetica, sans-serif;
   padding: 1rem;
 }
 
@@ -251,4 +251,9 @@
   font-size: 12px;
   font-weight: 500;
   padding: 10px;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
 }
