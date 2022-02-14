@@ -1,5 +1,5 @@
 # Eating Here App
-<img src="./eat-here-github-banner.jpg" alt="app banner" />
+<img src="./src/eat-here-github-banner.jpg" alt="app banner" />
 
 ### SPA features articles of the world's most unusual restaurants with like, comment, and filtering tools.
 
