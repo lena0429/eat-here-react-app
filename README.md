@@ -16,6 +16,9 @@ Feel free to check out the backend API repo <a href="https://github.com/lena0128
 ## Live Site
 Please feel free to visit the live site: https://relaxed-goldstine-8d48b2.netlify.app/
 
+## Demo
+You can watch the <a href="https://youtu.be/kMmNdldIngo">demo</a> on YouTube.
+
 ## Installation & Usage
 
 In the project directory, you can run:
