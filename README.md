@@ -1,7 +1,16 @@
-# Eating Here React App
+# Eating Here App
+<img src="./eat-here-github-banner.jpg" alt="app banner" />
+
+### SPA features articles of the world's most unusual restaurants with like, comment, and filtering tools.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), React Hooks and Redux were mainly used. This web application is for food lovers to explore the most unusual restaurants around the world. Users can add new restaurants as well as comment and like any restaurant. The App also provides name search functionality. Enjoy😊!
 
+## Features
+ * Modeled custom database schema and REST API with Active Record, Postgres, and Ruby On Rails
+ * Implemented user interface employing React, Redux with Semantic-React for styling, and improved user experience with responsive design techniques
+ * Leveraged Redux and Thunk middleware for asynchronous data retrieval  
+
+## Backend Repo
 Feel free to check out the backend API repo <a href="https://github.com/lena0128/eat-here-rails-api-backend">here</a>.
 
 ## Live Site
